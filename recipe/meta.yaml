@@ -1,5 +1,5 @@
 {% set name = "cargo-make" %}
-{% set version = "0.37.11" %}
+{% set version = "0.37.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sagiegurari/cargo-make/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c4f36ed50ee2f6786a29c20567a70aedca5e0e101a7388f44de1ba5445f3ec3e
+  sha256: 4d2cdf575715f19ccc0c362244f1d2f37709866aa4c147b7d282c047c1ebec31
 
 build:
   binary_relocation: false
@@ -16,11 +16,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
