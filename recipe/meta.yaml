@@ -11,7 +11,7 @@ source:
 
 build:
   binary_relocation: false
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -24,10 +24,11 @@ requirements:
 
 test:
   commands:
-    - ${PREFIX}/bin/cargo-make --help  # [unix]
-    - ${PREFIX}/bin/makers --help  # [unix]
-    - %PREFIX%\\bin\\cargo-make.exe --help  # [win]
-    - %PREFIX%\\bin\\makers.exe --help  # [win]
+    - ${CONDA_PREFIX}/bin/cargo-make --help  # [unix]
+    - ${CONDA_PREFIX}/bin/makers --help  # [unix]
+    - set "PATH=%CONDA_PREFIX%\\bin;%PATH%"  # [win]
+    - cargo-make.exe --help  # [win]
+    - makers.exe --help  # [win]
 
 about:
   home: https://github.com/sagiegurari/cargo-make
@@ -43,7 +44,6 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-
   doc_url: https://sagiegurari.github.io/cargo-make/
 
 extra:
