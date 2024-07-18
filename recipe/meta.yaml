@@ -24,8 +24,10 @@ requirements:
 
 test:
   commands:
-    - cargo-make --help
-    - makers --help
+    - ${PREFIX}/bin/cargo-make --help  # [unix]
+    - ${PREFIX}/bin/makers --help  # [unix]
+    - %PREFIX%\\bin\\cargo-make.exe --help  # [win]
+    - %PREFIX%\\bin\\makers.exe --help  # [win]
 
 about:
   home: https://github.com/sagiegurari/cargo-make
