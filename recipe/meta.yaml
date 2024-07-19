@@ -24,8 +24,12 @@ requirements:
 
 test:
   commands:
-    - cargo-make --help
-    - makers --help
+    - test -f $PREFIX/bin/cargo-make  # [unix]
+    - test -f $PREFIX/bin/makers  # [unix]
+    - if not exist %CONDA_PREFIX%\Scripts\cargo-make.exe exit 1  # [win]
+    - if not exist %CONDA_PREFIX%\Scripts\makers.exe exit 1  # [win]
+    - cargo-make -h
+    - makers -h
 
 about:
   home: https://github.com/sagiegurari/cargo-make
@@ -41,7 +45,6 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-
   doc_url: https://sagiegurari.github.io/cargo-make/
 
 extra:
