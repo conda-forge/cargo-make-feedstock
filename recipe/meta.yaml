@@ -24,11 +24,12 @@ requirements:
 
 test:
   commands:
-    - ${CONDA_PREFIX}/bin/cargo-make --help  # [unix]
-    - ${CONDA_PREFIX}/bin/makers --help  # [unix]
-    - set "PATH=%CONDA_PREFIX%\\bin;%PATH%"  # [win]
-    - cargo-make.exe --help  # [win]
-    - makers.exe --help  # [win]
+    - test -f $PREFIX/bin/cargo-make  # [unix]
+    - test -f $PREFIX/bin/makers  # [unix]
+    - if not exist %CONDA_PREFIX%\Scripts\cargo-make.exe exit 1  # [win]
+    - if not exist %CONDA_PREFIX%\Scripts\makers.exe exit 1  # [win]
+    - cargo-make -h
+    - makers -h
 
 about:
   home: https://github.com/sagiegurari/cargo-make
