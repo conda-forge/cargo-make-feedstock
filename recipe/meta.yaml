@@ -26,9 +26,10 @@ test:
   commands:
     - test -f $PREFIX/bin/cargo-make  # [unix]
     - test -f $PREFIX/bin/makers  # [unix]
-    - if not exist %CONDA_PREFIX%\Scripts\cargo-make.exe exit 1  # [win]
-    - if not exist %CONDA_PREFIX%\Scripts\makers.exe exit 1  # [win]
-    - cargo-make -h
+    - if not exist %PREFIX%\bin\cargo-make.exe exit 1  # [win]
+    - if not exist %PREFIX%\bin\makers.exe exit 1  # [win]
+    # cargo-make does no longer seem to be standalone, but a plugin for cargo: cargo-make --help no longer works
+    # - cargo_make --help
     - makers -h
 
 about:
