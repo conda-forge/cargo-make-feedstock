@@ -28,8 +28,7 @@ test:
     - test -f $PREFIX/bin/makers  # [unix]
     - if not exist %PREFIX%\bin\cargo-make.exe exit 1  # [win]
     - if not exist %PREFIX%\bin\makers.exe exit 1  # [win]
-    # cargo-make does no longer seem to be standalone, but a plugin for cargo: cargo-make --help no longer works
-    # - cargo_make --help
+    - cargo-make make --help
     - makers -h
 
 about:
