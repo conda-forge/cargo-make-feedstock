@@ -187,4 +187,5 @@ Feedstock Maintainers
 =====================
 
 * [@MementoRC](https://github.com/MementoRC/)
+* [@sagiegurari](https://github.com/sagiegurari/)
 
