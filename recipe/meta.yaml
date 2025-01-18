@@ -1,5 +1,5 @@
 {% set name = "cargo-make" %}
-{% set version = "0.37.23" %}
+{% set version = "0.37.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sagiegurari/cargo-make/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 10fd79354d28e87e579bbd294fd8770c9515f496982452117801ce2799d09247
+  sha256: a7f6f7332862442e6020e8d8b2568a6fa8eed28156be0dddd61982e1e644cf02
 
 build:
   binary_relocation: false
